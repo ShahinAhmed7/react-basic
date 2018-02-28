@@ -4,15 +4,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>React - Template</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
     <script src="../../js/react.min.js"></script>
     <script src="../../js/react-dom.min.js"></script>
     <script src="../../js/browser.min.js"></script>
 </head>
 <body>
 
-<div id="app"></div>
+<div id="container"></div>
 <script type="text/babel">
+var commnent = React.createClass({
+    reMove: function () {
+        alert('remove coding');
+    },
+    eTit: function () {
+        alert('remove coding');
+    },
+    render: function () {
+        return (
+            <div className="commentContainer">
+                <div className="commentText">{this.props.children}</div>
+                <button onClick="this.reMove">Remove Coments</button>
+                <button onClick="this.eTit">Edit Coments</button>
+            </div>
+        );
+    }
+});
 
+ReactDOM.render(
+    <div className="board">
+        <comment>Hey how area you</comment>
+    </div>
+    , document.getElementById('container'));
 </script>
 
 </body>
